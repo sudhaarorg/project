@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FOrm</title>
+	<script type="text/javascript">
+		var helpers = [
+			"aa",
+			"aabbb",
+			"aabbbccc",
+			"default",
+			"default",
+		]
+
+		function messages(adviceNumber) {
+			document.getElementById("adviceBox").value=helpers[adviceNumber];
+		}
+
+		function f_chkname(name) {
+			var pat = /^\w+, ?\w*,?\w+$/;
+			var dom = document.getElementById('gotName');
+			var pos = dom.value.search(pat);
+
+			if(pos != 0 )
+			{
+				alert("Enter name '" + dom.value + "' is not in correct format\n" + "Please ENter the name correctly\n");
+				document.getElementById('gotName').innerHTML="format: FIrst name, MIddle name, LAst NAme";
+				document.getElementById('gotName').style.color="red";
+			}
+			else
+			{
+				documenmt.getElementById('gotName').innerHTML="Name Entered is correct";
+				document.getElementById('gotName').style.color="green";
+			}
+		}
+	</script>
+</head>
+<center>
+<body>
+	<h1>SUDHAAR</h1>
+	<br><br><br><br>
+	<h1>Customer information</h1>
+	<form action="">
+		<label>Name:<input type="text" id="gotName" name="gg" onmouseover="messages(0)" onmouseout="messages(4)" onchange="f_chkname('Name')"></label><br><br>
+		<label>Email:<input type="text" name="pp" onmouseover="messages(0)" onmouseout="messages(4)" onchange="f_chkname('Name')"></label><br><br>
+
+		<p>To  create an account, provide the following</p><br>
+
+		<label>UserID:<input type="text" name="as" onmouseover="messages(3)" onmouseout="messages(4)"></label><br><br>
+		<label>password<input type="password" name="" onmouseover="messages(3)" onmouseout="messages(4)"></label><br><br>
+		<button>Submit</button>
+		<button>Reset</button>
+
+
+
+</form>
+</body>
+</center>
+</html>
